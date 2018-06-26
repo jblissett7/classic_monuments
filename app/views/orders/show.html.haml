@@ -1,0 +1,22 @@
+%center
+	%h1 Classic Monument
+
+%h2 Order details
+
+%h3 Full Name: #{@order.first_name } #{@order.last_name}
+%h3 Order Status: #{@order.status}
+%h3 Monument Type: #{@order.monument}
+%h3 Monument Ordered? #{@order.monument_ordered? ? 'Yes' : 'No'}
+%h3 Cemetery: #{@order.cemetery}
+%h3 Date Ordered: #{@order.date_ordered}
+%h3 Date Set: #{@order.date_set}
+%h3 Ordered By: #{@order.ordered_by}
+%h3 Address: #{@order.address}
+%h3 Phone Number: #{@order.phone_number}
+%h3 Email #{@order.email}
+%h3 Total Fees: #{@order.total_fees}
+%h3 Remaining Balance Due: #{@order.balance_due}
+
+= link_to 'Back', root_path
+= link_to 'Edit', edit_order_path(@order)
+= button_to 'Delete Order', order_path(@order), :method => :delete, :confirm => 'Are you sure?'

@@ -1,0 +1,23 @@
+%h1 Classic Monument
+=link_to 'Create Order', new_order_path
+%table{:cellspacing => 5}
+	%thead
+		%tr
+			%th Last Name
+			%th First Name 
+			%th Status
+			%th Ordered By
+			%th Balance Due
+
+	%tbody
+		- @orders.each do |order|
+			%tr
+				%td= order.last_name
+				%td= order.first_name
+				%td= order.status
+				%td= order.ordered_by
+				%td= order.balance_due
+				%td= link_to 'More', order_path(order)
+				%td= link_to 'Edit', edit_order_path(order)
+		
+

@@ -1,0 +1,48 @@
+%h1 Classic Monuments
+
+%h2 Create New Order
+= link_to 'Cancel', root_path
+= form_with model: Order.new do |form|
+	= form.label :last_name
+	= form.text_field :last_name
+	%br
+	= form.label :first_name
+	= form.text_field :first_name
+	%br
+	= form.label :status
+	= form.text_field :status
+	%br
+	= form.label :monument
+	= form.text_field :monument
+	%br
+	= form.label :monument_ordered?
+	= form.check_box :monument_ordered?
+	%br
+	= form.label :cemetery
+	= form.text_field :cemetery
+	%br
+	= form.label :date_ordered
+	= form.date_select :date_ordered
+	%br
+	= form.label :date_set
+	= form.date_select :date_set
+	%br
+	= form.label :ordered_by
+	= form.text_field :ordered_by
+	%br
+	= form.label :address
+	= form.text_field :address
+	%br
+	= form.label :phone_number
+	= form.phone_field :phone_number
+	%br
+	= form.label :email
+	= form.text_field :email
+	%br
+	= form.label :total_fees
+	= form.text_field :total_fees
+	%br
+	= form.label :balance_due
+	= form.text_field :balance_due
+	%br
+	= form.submit 
