@@ -1,0 +1,30 @@
+%h1 Classic Monuments
+
+%h2 Create New Monument
+= link_to 'Cancel', monuments_path
+= form_with model: Monument.new do |form|
+	= form.label :monument_type
+	= form.text_field :monument_type
+	%br
+	= form.label :single?
+	= form.check_box :single?
+	%br
+	= form.label :length
+	= form.text_field :length
+	%br
+	= form.label :width
+	= form.text_field :width
+	%br
+	= form.label :height
+	= form.text_field :height
+	%br
+	= form.label :color
+	= form.text_field :color
+	%br
+	= form.label :base?
+	= form.check_box :base?
+	%br
+	= form.label :price
+	= form.text_field :price_currency
+	%br
+	= form.submit

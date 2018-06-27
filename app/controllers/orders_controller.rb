@@ -40,6 +40,6 @@ class OrdersController < ApplicationController
       params.require(:order).permit(:id, :last_name, :first_name,
         :status, :monument, :monument_ordered?, :cemetery,
         :date_ordered, :date_set, :ordered_by, :address, :phone_number,
-        :email, :total_fees, :balance_due)
+        :email, :total_fees_currency, :balance_due_currency)
     end
 end

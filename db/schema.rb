@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_26_153945) do
+ActiveRecord::Schema.define(version: 2018_06_27_164425) do
+
+  create_table "monuments", force: :cascade do |t|
+    t.integer "order_id"
+    t.string "monument_type"
+    t.boolean "single?"
+    t.string "length"
+    t.string "width"
+    t.string "height"
+    t.string "color"
+    t.boolean "base?"
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "USD", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_monuments_on_order_id"
+  end
 
   create_table "orders", force: :cascade do |t|
     t.string "last_name"
@@ -25,8 +41,10 @@ ActiveRecord::Schema.define(version: 2018_06_26_153945) do
     t.string "address"
     t.string "phone_number"
     t.string "email"
-    t.string "total_fees"
-    t.string "balance_due"
+    t.integer "total_fees_cents", default: 0, null: false
+    t.string "total_fees_currency", default: "USD", null: false
+    t.integer "balance_due_cents", default: 0, null: false
+    t.string "balance_due_currency", default: "USD", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

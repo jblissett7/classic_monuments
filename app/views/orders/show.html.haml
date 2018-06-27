@@ -14,8 +14,8 @@
 %h3 Address: #{@order.address}
 %h3 Phone Number: #{@order.phone_number}
 %h3 Email #{@order.email}
-%h3 Total Fees: #{@order.total_fees}
-%h3 Remaining Balance Due: #{@order.balance_due}
+%h3 Total Fees: $#{@order.total_fees_currency}
+%h3 Remaining Balance Due: $#{@order.balance_due_currency}
 
 = link_to 'Back', root_path
 = link_to 'Edit', edit_order_path(@order)

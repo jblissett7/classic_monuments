@@ -13,8 +13,8 @@ class CreateOrders < ActiveRecord::Migration[5.2]
     	t.string :address
     	t.string :phone_number
     	t.string :email
-    	t.string :total_fees
-    	t.string :balance_due 
+    	t.monetize :total_fees
+    	t.monetize :balance_due 
 
       t.timestamps
     end

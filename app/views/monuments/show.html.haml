@@ -1,0 +1,13 @@
+%h1 Classic Monument
+
+%h2 Monument Details
+
+%h3 Type: #{@monument.monument_type}
+%h3 Double or Single: #{@monument.single? ? 'Single' : 'Double'}
+%h3 Size: #{@monument.length} by #{@monument.width} by #{@monument.height}
+%h3 Color: #{@monument.color}
+%h3 Price: $#{@monument.price_currency}
+
+= link_to 'Back', monuments_path
+= link_to 'Edit', edit_monument_path(@monument)
+= button_to 'Delete Monument', monument_path(@monument), :method => :delete, :confirm => 'Are you sure?' 
