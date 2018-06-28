@@ -1,21 +1,24 @@
+# frozen_string_literal: true
+
+# Orders Controller
 class OrdersController < ApplicationController
   def index
-  	@orders = Order.all
+    @orders = Order.all
   end
 
-  def new 
+  def new
     @status_array = ['Awaiting Payment', 'Awaiting Approval',
-      'Approved', 'Completed']
+                     'Approved', 'Completed']
   end
 
   def create
-  	@order = Order.new(order_params)
-  	if @order.save
-      puts "Saved"
+    @order = Order.new(order_params)
+    if @order.save
+      puts 'Saved'
       redirect_to root_path
-  	else
-      puts "Not Saved"
-  	end
+    else
+      puts 'Not Saved'
+    end
   end
 
   def show
@@ -24,7 +27,7 @@ class OrdersController < ApplicationController
 
   def edit
     @status_array = ['Awaiting Payment', 'Awaiting Approval',
-      'Approved', 'Completed']
+                     'Approved', 'Completed']
     @order = Order.find(params[:id])
   end
 
@@ -40,14 +43,14 @@ class OrdersController < ApplicationController
     redirect_to root_path
   end
 
+  private
 
-
-  private 
-
-    def order_params
-      params.require(:order).permit(:id, :last_name, :first_name,
-        :status, :monument, :monument_ordered, :cemetery,
-        :date_ordered, :date_set, :ordered_by, :address, :phone_number,
-        :email, :total_fees_cents, :balance_due_cents)
-    end
+  def order_params
+    params.require(:order).permit(
+      :id, :last_name, :first_name,
+      :status, :monument, :monument_ordered, :cemetery,
+      :date_ordered, :date_set, :ordered_by, :address, :phone_number,
+      :email, :total_fees_cents, :balance_due_cents
+    )
+  end
 end

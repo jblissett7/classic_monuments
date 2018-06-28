@@ -3,11 +3,12 @@
 %h2 Edit New Monument
 = link_to 'Cancel', monuments_path
 = simple_form_for @monument do |f|
-	= f.input :monument_type, collection: @type_array
-	= f.collection_radio_buttons :single, [[true, 'Single'], [false, 'Double']], :first, :last
-	= f.input :length, input_html: {size: 20}
-	= f.input :width
-	= f.input :height
-	= f.input :color
-	= f.input :price_cents
-	= f.button :submit
+  = f.input :monument_type, collection: @type_array
+  = f.collection_radio_buttons :single,
+  [[true, 'Single'], [false, 'Double']], :first, :last
+  = f.input :length, input_html: { size: 20 }
+  = f.input :width
+  = f.input :height
+  = f.input :color
+  = f.input :price_cents
+  = f.button :submit

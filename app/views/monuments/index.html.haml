@@ -1,20 +1,19 @@
 %h1 Classic Monument
-=link_to 'Create Monument', new_monument_path
-%table{:cellspacing => 5}
-	%thead
-		%tr
-			%th Type
-			%th Capacity
-			%th Size
-			%th Color
-			%th Price
-	%tbody
-		- @monuments.each do |monument|
-			%tr
-				%td= monument.monument_type 
-				%td= monument.single ? 'Single' : 'Double'
-				%td #{monument.length}X#{monument.width}X#{monument.height}
-				%td= monument.color
-				%td $#{monument.price_cents}
-				%td= link_to 'More Info', monument_path(monument)
-
+= link_to 'Create Monument', new_monument_path
+%table{ cellspacing: 5 }
+  %thead
+    %tr
+      %th Type
+      %th Capacity
+      %th Size
+      %th Color
+      %th Price
+  %tbody
+    - @monuments.each do |monument|
+      %tr
+        %td= monument.monument_type
+        %td= monument.single ? 'Single' : 'Double'
+        %td #{monument.length}X#{monument.width}X#{monument.height}
+        %td= monument.color
+        %td $#{monument.price_cents}
+        %td= link_to 'More Info', monument_path(monument)
