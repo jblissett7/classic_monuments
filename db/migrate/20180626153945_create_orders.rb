@@ -5,7 +5,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
     	t.string :first_name
     	t.string :status
     	t.string :monument
-    	t.boolean :monument_ordered?
+    	t.boolean :monument_ordered
     	t.string :cemetery
     	t.date :date_ordered
     	t.date :date_set

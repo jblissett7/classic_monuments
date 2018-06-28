@@ -7,16 +7,14 @@
 			%th Capacity
 			%th Size
 			%th Color
-			%th Base
 			%th Price
 	%tbody
 		- @monuments.each do |monument|
 			%tr
 				%td= monument.monument_type 
-				%td= monument.single? ? 'Single' : 'Double'
-				%td #{monument.length} #{monument.width} #{monument.height}
+				%td= monument.single ? 'Single' : 'Double'
+				%td #{monument.length}X#{monument.width}X#{monument.height}
 				%td= monument.color
-				%td= monument.base? ? 'Yes' : 'No'
-				%td $#{monument.price_currency}
+				%td $#{monument.price_cents}
 				%td= link_to 'More Info', monument_path(monument)
 

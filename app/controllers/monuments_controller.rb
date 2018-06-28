@@ -4,6 +4,7 @@ class MonumentsController < ApplicationController
   end
 
   def new
+    @type_array = ['Bevel', 'Upright', 'Slant', 'Flat']
   end
 
   def create
@@ -24,7 +25,7 @@ class MonumentsController < ApplicationController
 
   def update
   	@monument = Monument.find(params[:id])
-  	@monument.update_attributes!(order_params)
+  	@monument.update_attributes!(monument_params)
   	redirect_to monument_path(@monument)
   end
 
@@ -38,6 +39,6 @@ end
 private
 	
 	def monument_params
-		params.require(:monument).permit(:monument_type, :single?, :length,
-			:width, :height, :color, :base?, :price_currency)
+		params.require(:monument).permit(:monument_type, :single, :length,
+			:width, :height, :color, :price_cents, :price_currency)
 	end

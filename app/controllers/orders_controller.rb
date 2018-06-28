@@ -4,13 +4,17 @@ class OrdersController < ApplicationController
   end
 
   def new 
+    @status_array = ['Awaiting Payment', 'Awaiting Approval',
+      'Approved', 'Completed']
   end
 
   def create
   	@order = Order.new(order_params)
   	if @order.save
+      puts "Saved"
       redirect_to root_path
   	else
+      puts "Not Saved"
   	end
   end
 
@@ -19,6 +23,8 @@ class OrdersController < ApplicationController
   end
 
   def edit
+    @status_array = ['Awaiting Payment', 'Awaiting Approval',
+      'Approved', 'Completed']
     @order = Order.find(params[:id])
   end
 
@@ -34,12 +40,14 @@ class OrdersController < ApplicationController
     redirect_to root_path
   end
 
+
+
   private 
 
     def order_params
       params.require(:order).permit(:id, :last_name, :first_name,
-        :status, :monument, :monument_ordered?, :cemetery,
+        :status, :monument, :monument_ordered, :cemetery,
         :date_ordered, :date_set, :ordered_by, :address, :phone_number,
-        :email, :total_fees_currency, :balance_due_currency)
+        :email, :total_fees_cents, :balance_due_cents)
     end
 end

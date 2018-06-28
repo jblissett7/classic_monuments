@@ -15,12 +15,11 @@ ActiveRecord::Schema.define(version: 2018_06_27_164425) do
   create_table "monuments", force: :cascade do |t|
     t.integer "order_id"
     t.string "monument_type"
-    t.boolean "single?"
+    t.boolean "single"
     t.string "length"
     t.string "width"
     t.string "height"
     t.string "color"
-    t.boolean "base?"
     t.integer "price_cents", default: 0, null: false
     t.string "price_currency", default: "USD", null: false
     t.datetime "created_at", null: false
@@ -33,7 +32,7 @@ ActiveRecord::Schema.define(version: 2018_06_27_164425) do
     t.string "first_name"
     t.string "status"
     t.string "monument"
-    t.boolean "monument_ordered?"
+    t.boolean "monument_ordered"
     t.string "cemetery"
     t.date "date_ordered"
     t.date "date_set"

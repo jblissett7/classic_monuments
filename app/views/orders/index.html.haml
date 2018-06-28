@@ -16,7 +16,7 @@
 				%td= order.first_name
 				%td= order.status
 				%td= order.ordered_by
-				%td= order.balance_due_currency
+				%td  $#{order.balance_due_cents}
 				%td= link_to 'More Info', order_path(order)
 				%td= link_to 'Edit', edit_order_path(order)
 		
