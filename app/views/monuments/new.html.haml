@@ -7,9 +7,9 @@
   = f.input :monument_type, collection: @type_array
   = f.collection_radio_buttons :single, [[true, 'Single'],
    [false, 'Double']], :first, :last
-  = f.input :length, input_html: { size: 20 }
+  = f.input :length
   = f.input :width
   = f.input :height
-  = f.input :color
+  = f.input :color, collection: @color_array
   = f.input :price_cents
   = f.button :submit

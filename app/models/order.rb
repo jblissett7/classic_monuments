@@ -7,4 +7,8 @@ class Order < ApplicationRecord
                         :cemetery, :ordered_by, :address,
                         :phone_number, :email
   has_one :monument
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

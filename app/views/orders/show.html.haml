@@ -1,9 +1,9 @@
 %center
-	%h1 Classic Monument
+  %h1 Classic Monument
 
 %h2 Order details
 
-%h3 Full Name: #{@order.first_name } #{@order.last_name}
+%h3 Full Name: #{@order.full_name}
 %h3 Order Status: #{@order.status}
 %h3 Monument Type: #{@order.monument}
 %h3 Monument Ordered? #{@order.monument_ordered ? 'Yes' : 'No'}

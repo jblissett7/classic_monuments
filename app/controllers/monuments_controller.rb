@@ -8,6 +8,11 @@ class MonumentsController < ApplicationController
 
   def new
     @type_array = %w[Bevel Upright Slant Flat]
+    @color_array = %w[Georgia\ Gray Morning\ Rose Salisbury\ Pink Autumn\ Rose
+                      Flash\ Black Jet\ Black American\ Black Blue\ Silk
+                      Missouri\ Red Sienna\ Red Dakota\ Mahogany
+                      Canadian\ Mahogany Barre India\ Mist India\ Red
+                      Night\ Star Carelian]
   end
 
   def create
@@ -21,6 +26,11 @@ class MonumentsController < ApplicationController
 
   def edit
     @type_array = %w[Bevel Upright Slant Flat]
+    @color_array = %w[Georgia\ Gray Morning\ Rose Salisbury\ Pink Autumn\ Rose
+                      Flash\ Black Jet\ Black American\ Black Blue\ Silk
+                      Missouri\ Red Sienna\ Red Dakota\ Mahogany
+                      Canadian\ Mahogany Barre India\ Mist India\ Red
+                      Night\ Star Carelian]
     @monument = Monument.find(params[:id])
   end
 

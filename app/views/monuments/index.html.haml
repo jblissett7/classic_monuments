@@ -13,7 +13,7 @@
       %tr
         %td= monument.monument_type
         %td= monument.single ? 'Single' : 'Double'
-        %td #{monument.length}X#{monument.width}X#{monument.height}
+        %td= monument.dimensions
         %td= monument.color
         %td $#{monument.price_cents}
         %td= link_to 'More Info', monument_path(monument)
